@@ -7,8 +7,9 @@ local config = wezterm.config_builder()
 -- Window Appearance
 config.window_background_opacity = 0.85 -- semi-transparent
 config.macos_window_background_blur = 20 -- macOS only; for blur behind terminal
-config.window_decorations = "RESIZE" -- clean titlebar
-config.enable_scroll_bar = false
+config.window_decorations = "INTEGRATED_BUTTONS|RESIZE" -- clean titlebar
+
+config.enable_scroll_bar = true
 
 -- Font Setup
 config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular" })
@@ -31,7 +32,7 @@ config.window_padding = {
 }
 
 -- Other enhancements
-config.use_fancy_tab_bar = false
+config.use_fancy_tab_bar = true
 config.tab_bar_at_bottom = true
 
 -- Return config
