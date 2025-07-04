@@ -1,0 +1,139 @@
+
+[env]
+TERM = "xterm-256color"
+# Performance optimization
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[font]
+# Premium terminal fonts - choose your favorite!
+# Option 1: JetBrains Mono (Recommended - excellent readability & ligatures)
+# normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+# bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+# italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+# bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+
+# Option 2: Fira Code (Beautiful ligatures)
+# normal = { family = "FiraCode Nerd Font", style = "Regular" }
+# bold = { family = "FiraCode Nerd Font", style = "Bold" }
+# italic = { family = "FiraCode Nerd Font", style = "Light" }
+# bold_italic = { family = "FiraCode Nerd Font", style = "Medium" }
+#
+# Option 3: Hack (Clean & minimal)
+# normal = { family = "Hack Nerd Font", style = "Regular" }
+# bold = { family = "Hack Nerd Font", style = "Bold" }
+# italic = { family = "Hack Nerd Font", style = "Italic" }
+# bold_italic = { family = "Hack Nerd Font", style = "Bold Italic" }
+#
+# Option 4: Iosevka (Modern & customizable)
+# normal = { family = "Iosevka Nerd Font", style = "Regular" }
+# bold = { family = "Iosevka Nerd Font", style = "Bold" }
+# italic = { family = "Iosevka Nerd Font", style = "Italic" }
+# bold_italic = { family = "Iosevka Nerd Font", style = "Bold Italic" }
+#
+# Option 5: Source Code Pro (Adobe's professional choice)
+# normal = { family = "SauceCodePro Nerd Font", style = "Regular" }
+# bold = { family = "SauceCodePro Nerd Font", style = "Bold" }
+# italic = { family = "SauceCodePro Nerd Font", style = "Italic" }
+# bold_italic = { family = "SauceCodePro Nerd Font", style = "Bold Italic" }
+
+# Option 6: Fantasque Sans Mono (Quirky & fun)
+normal = { family = "FantasqueSansM Nerd Font", style = "Regular" }
+bold = { family = "FantasqueSansM Nerd Font", style = "Bold" }
+italic = { family = "FantasqueSansM Nerd Font", style = "Italic" }
+bold_italic = { family = "FantasqueSansM Nerd Font", style = "Bold Italic" }
+
+size = 11.0
+# Optimized font rendering
+offset = { x = 0, y = 1 }
+glyph_offset = { x = 0, y = 0 }
+builtin_box_drawing = true
+
+[window]
+# Modern window appearance
+padding = { x = 16, y = 16 }
+decorations = "none"
+opacity = 0.95
+blur = true
+dynamic_title = true
+dynamic_padding = false
+startup_mode = "Windowed"
+# Cool dimension settings
+dimensions = { columns = 120, lines = 35 }
+# Window position (optional)
+# position = { x = 100, y = 100 }
+
+[scrolling]
+# Smooth scrolling
+history = 10000
+multiplier = 3
+
+[cursor]
+# Stylish cursor
+style = { shape = "Block", blinking = "On" }
+blink_interval = 500
+blink_timeout = 5
+unfocused_hollow = true
+thickness = 0.15
+
+[mouse]
+# Enhanced mouse support
+hide_when_typing = true
+bindings = [
+  { mouse = "Middle", action = "PasteSelection" },
+  { mouse = "Right", action = "PasteSelection" },
+]
+
+[keyboard]
+bindings = [
+  # System controls
+  { key = "F11", action = "ToggleFullscreen" },
+  { key = "F10", action = "ToggleMaximized" },
+
+  # Font size controls
+  { key = "Plus", mods = "Control", action = "IncreaseFontSize" },
+  { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
+  { key = "Key0", mods = "Control", action = "ResetFontSize" },
+
+  # Clipboard operations
+  { key = "C", mods = "Control|Shift", action = "Copy" },
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+
+  # Search functionality
+  { key = "F", mods = "Control|Shift", action = "SearchForward" },
+  { key = "B", mods = "Control|Shift", action = "SearchBackward" },
+
+  # Tab/Window management (if using tmux/terminal multiplexer)
+  { key = "T", mods = "Control|Shift", chars = "\u0002c" }, # tmux new window
+  { key = "W", mods = "Control|Shift", chars = "\u0002x" }, # tmux kill pane
+  { key = "H", mods = "Control|Shift", chars = "\u0002h" }, # tmux left pane
+  { key = "L", mods = "Control|Shift", chars = "\u0002l" }, # tmux right pane
+  { key = "J", mods = "Control|Shift", chars = "\u0002j" }, # tmux down pane
+  { key = "K", mods = "Control|Shift", chars = "\u0002k" }, # tmux up pane
+
+  # Vi mode (optional - enable if you want vim-like navigation)
+  { key = "Space", mods = "Shift|Control", mode = "~Search", action = "ToggleViMode" },
+]
+
+[selection]
+# Smart selection
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = true
+
+[bell]
+# Subtle visual bell instead of audio
+animation = "EaseOutExpo"
+duration = 0
+color = "#7aa2f7"
+
+[debug]
+# Performance monitoring (disable in production)
+render_timer = false
+persistent_logging = false
+log_level = "Warn"
+
+# Performance optimizations
+[general]
+live_config_reload = true
+# Cool Alacritty Configuration
+# Import theme colors from your omarchy setup
+import = ["~/.config/omarchy/current/theme/alacritty.toml"]
